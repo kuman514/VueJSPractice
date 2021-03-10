@@ -12,6 +12,11 @@
     <div id="app">
       {{ nextYear('핑퐁') }} <br>
       {{ otherMethod() }}
+      <input v-bind:type="inputType" v-bind:value="inputData">
+      <!-- v-bind는 생략 가능 :만 넣어도 가능 -->
+      <input :type="inputType" :value="inputData"><br>
+      <a :href="linkTo">kumankoishi.html</a>
+      <a :href="getLink('kuman514')">kumankoishi.html</a>
     </div>
     <script>
       new Vue({
@@ -20,9 +25,15 @@
           person: {
             name: 'kuman514',
             age: 1234
-          }
+          },
+          inputData: 12,
+          inputType: 'number',
+          linkTo: 'https://github.com/'
         },
         methods: {
+          getLink: function (id) {
+            return `${this.linkTo}${id}`
+          },
           nextYear: function (greeting) {
             return `${greeting}! ${this.person.name}은 내년에 ${this.person.age + 1}살입니다.` 
           },
