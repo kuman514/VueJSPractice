@@ -10,13 +10,26 @@
   </head>
   <body>
     <div id="app">
-      {{ message }}
+      {{ nextYear('핑퐁') }} <br>
+      {{ otherMethod() }}
     </div>
     <script>
       new Vue({
         el: '#app',
         data: {
-          message: 'kuman514'
+          person: {
+            name: 'kuman514',
+            age: 1234
+          }
+        },
+        methods: {
+          nextYear: function (greeting) {
+            return `${greeting}! ${this.person.name}은 내년에 ${this.person.age + 1}살입니다.` 
+          },
+          otherMethod: function () {
+            console.log('다른 함수')
+            return this.nextYear('야옹')
+          }
         }
       })
     </script>
