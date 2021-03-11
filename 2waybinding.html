@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- script src="https://cdn.jsdelivr.net/npm/vue"></script -->
+  </head>
+  <body>
+    <div id="app">
+      <form v-on:submit.prevent="mySubmit">
+        <!-- v-on:은 @로 대체가 가능하다 -->
+        <!-- input type="text" :value="text" @keyup="updateText"><br -->
+        <input type="text" v-model="text"><br>
+        {{ text }}<br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          year: 2021,
+          text: 'text'
+        },
+        methods: {
+          mySubmit: function () {
+            alert('submit')
+            console.log('submit')
+          },
+          /*
+          updateText: function (event) {
+            this.text = event.target.value
+          }
+          */
+        }
+      })
+    </script>
+  </body>
+</html>
