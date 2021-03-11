@@ -16,7 +16,15 @@
       <!-- v-bind는 생략 가능 :만 넣어도 가능 -->
       <input :type="inputType" :value="inputData"><br>
       <a :href="linkTo">kumankoishi.html</a>
-      <a :href="getLink('kuman514')">kumankoishi.html</a>
+      <a :href="getLink('kuman514')">kumankoishi.html</a><br>
+      <button v-on:click="myAlert">Click Me</button><br>
+      {{ year }}
+      <button v-on:click="increase">Increase</button>
+      <button v-on:click="decrease">Decrease</button><br>
+      <form v-on:submit.prevent="mySubmit">
+        <input type="text" name="" id="">
+        <button type="submit">Submit</button>
+      </form>
     </div>
     <script>
       new Vue({
@@ -28,7 +36,8 @@
           },
           inputData: 12,
           inputType: 'number',
-          linkTo: 'https://github.com/'
+          linkTo: 'https://github.com/',
+          year: 2021
         },
         methods: {
           getLink: function (id) {
@@ -40,6 +49,19 @@
           otherMethod: function () {
             console.log('다른 함수')
             return this.nextYear('야옹')
+          },
+          myAlert: function () {
+            alert('hello kuman')
+          },
+          increase: function () {
+            this.year++
+          },
+          decrease: function () {
+            this.year--
+          },
+          mySubmit: function () {
+            alert('submit')
+            console.log('submit')
           }
         }
       })
