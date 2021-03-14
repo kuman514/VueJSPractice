@@ -22,13 +22,16 @@
       <div :class="{ red: isRed, bold: isBold }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quae magnam aliquid numquam perspiciatis rem vero repellat. Doloribus est eius quae molestiae neque quod iusto minus inventore! Tempore, quasi laborum!</div>
       <button @click="invertRed">Invert Red</button>
       <button @click="invertBold">Invert Bold</button>
+      <div :style="{ color: anotherColor, fontSize: fontSize }">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt delectus eius earum ab nulla, ratione, labore totam, doloremque consequatur ipsum saepe aspernatur et corporis mollitia deserunt ullam. Facilis, suscipit aut?</div>
     </div>
     <script>
       new Vue({
         el: '#app',
         data: {
           isRed: false,
-          isBold: false
+          isBold: false,
+          anotherColor: 'green',
+          fontSize: '30px'
         },
         methods: {
           invertRed () {
