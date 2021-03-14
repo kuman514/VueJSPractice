@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Vue.js</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- script src="https://cdn.jsdelivr.net/npm/vue"></script -->
+  </head>
+  <body>
+    <div id="app">
+      <button @click="hide">Hide</button>
+      <!-- v-if determines by bool value, to show or not -->
+      <div v-if="show">Yes</div>
+      <!-- v-else is inverted version of v-if -->
+      <div v-else>No</div>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          show: false
+        },
+        methods: {
+          hide () {
+            this.show = !this.show
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
