@@ -19,9 +19,16 @@
   </head>
   <body>
     <div id="app">
-      <button @click="hide">Hide</button>
+      <button @click="increase">++</button>
+      <button @click="decrease">--</button>
+      {{ number }}
       <!-- v-if determines by bool value, to show or not -->
-      <div v-if="show">Yes</div>
+      <template v-if="number === 1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </template>
+      <div v-else-if="number === 2">Yes</div>
       <!-- v-else is inverted version of v-if -->
       <div v-else>No</div>
     </div>
@@ -29,11 +36,14 @@
       new Vue({
         el: '#app',
         data: {
-          show: false
+          number: 1
         },
         methods: {
-          hide () {
-            this.show = !this.show
+          increase () {
+            this.number++
+          },
+          decrease () {
+            this.number--
           }
         }
       })
