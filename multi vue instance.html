@@ -27,7 +27,7 @@
       <button @click="changeText">Change Text</button>
     </div>
     <script>
-      new Vue({
+      const app = new Vue({
         el: '#app',
         data: {
           name: 'kuman514'
@@ -35,16 +35,18 @@
         methods: {
           changeText () {
             this.name = 'yasuo'
+            app1.name = 'yasuo is science'
           }
         }
       })
-      new Vue({
+      const app1 = new Vue({
         el: '#app-1',
         data: {
           name: 'kuman another'
         },
         methods: {
           changeText () {
+            app.name = 'koishie'
             this.name = 'yso'
           }
         }
