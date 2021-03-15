@@ -34,8 +34,8 @@
 
       <hr>
 
-      <div v-for="person in people">
-        {{ person.name }} {{ person.age }}
+      <div v-for="(person, index) in people" :key="person.id">
+        {{ person.name }} {{ person.age }} {{ index }}
       </div>
     </div>
     <script>
@@ -43,11 +43,12 @@
         el: '#app',
         data: {
           people: [
-            { name: 'a', age: 20 },
-            { name: 'b', age: 21 },
-            { name: 'c', age: 22 },
-            { name: 'd', age: 23 },
-            { name: 'e', age: 24 }
+            { id: 1, name: 'a', age: 20 },
+            { id: 2, name: 'b', age: 21 },
+            { id: 3, name: 'c', age: 22 },
+            { id: 4, name: 'd', age: 23 },
+            { id: 5, name: 'e', age: 24 },
+            { id: 6, name: 'e', age: 27 }
           ]
         },
         methods: {
