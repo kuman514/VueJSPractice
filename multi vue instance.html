@@ -19,10 +19,12 @@
   </head>
   <body>
     <div id="app">
-      {{ name }}
+      {{ name }}<br>
+      <button @click="changeText">Change Text</button>
     </div>
     <div id="app-1">
-      {{ name }}
+      {{ name }}<br>
+      <button @click="changeText">Change Text</button>
     </div>
     <script>
       new Vue({
@@ -31,6 +33,9 @@
           name: 'kuman514'
         },
         methods: {
+          changeText () {
+            this.name = 'yasuo'
+          }
         }
       })
       new Vue({
@@ -39,6 +44,9 @@
           name: 'kuman another'
         },
         methods: {
+          changeText () {
+            this.name = 'yso'
+          }
         }
       })
     </script>
