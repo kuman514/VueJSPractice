@@ -21,7 +21,7 @@
     <div id="app">
       {{ name }}
     </div>
-    <div>
+    <div id="app-1">
       {{ name }}
     </div>
     <script>
@@ -29,6 +29,14 @@
         el: '#app',
         data: {
           name: 'kuman514'
+        },
+        methods: {
+        }
+      })
+      new Vue({
+        el: '#app-1',
+        data: {
+          name: 'kuman another'
         },
         methods: {
         }
