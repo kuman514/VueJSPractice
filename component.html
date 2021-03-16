@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing Vue.js</title>
+    <style>
+      .red {
+        color: red;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- script src="https://cdn.jsdelivr.net/npm/vue"></script -->
+  </head>
+  <body>
+    <div id="app">
+      <kuman-btn></kuman-btn>
+    </div>
+    <div id="app-1">
+      <kuman-btn></kuman-btn>
+    </div>
+    <script>
+      Vue.component('koishie', {
+        template: `
+          <div>
+            koishi is an adorable baby
+          </div>
+        `
+      })
+      Vue.component('kuman-btn', {
+        template: `
+          <div>
+            {{ name }}<br>
+            <koishie></koishie>
+            <button @click="changeText">Click</button>
+          </div>
+        `,
+        data () {
+          return {
+            name: 'kuman514'
+          }
+        },
+        methods: {
+          changeText () {
+            this.name = 'yasuo'
+          }
+        }
+      })
+      const app = new Vue({
+        el: '#app'
+      })
+      const app1 = new Vue({
+        el: '#app-1'
+      })
+    </script>
+  </body>
+</html>
