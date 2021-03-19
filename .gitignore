@@ -1,0 +1,24 @@
+hello-world/node_modules/
+hello-world/.DS_Store
+hello-world/node_modules
+hello-world/dist
+
+
+# local env files
+hello-world/.env.local
+hello-world/.env.*.local
+
+# Log files
+hello-world/npm-debug.log*
+hello-world/yarn-debug.log*
+hello-world/yarn-error.log*
+hello-world/pnpm-debug.log*
+
+# Editor directories and files
+hello-world/.idea
+hello-world/.vscode
+hello-world/*.suo
+hello-world/*.ntvs*
+hello-world/*.njsproj
+hello-world/*.sln
+hello-world/*.sw?
